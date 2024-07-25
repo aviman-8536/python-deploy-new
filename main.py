@@ -11,7 +11,7 @@ print("The product is: ",multiply(numb1,numb2))
  
  
  
-def multiply(a, z):
+def addition(a, z):
     return a * z
 
 def add(a, z):
