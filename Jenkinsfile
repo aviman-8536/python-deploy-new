@@ -3,7 +3,7 @@ pipeline {
     environment {
         GIT_URL = 'https://github.com/aviman-8536/python-deploy-new.git'
         GIT_BRANCH = 'dev'
-        GIT_CREDENTIALS = 'github-credential' // Make sure this credential ID exists in Jenkins
+        GIT_CREDENTIALS = 'github_credentials' // Make sure this credential ID exists in Jenkins
     }
     stages {
         stage('Checkout') {
