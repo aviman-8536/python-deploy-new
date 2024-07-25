@@ -3,7 +3,7 @@ pipeline {
     environment {
         GIT_URL = 'https://github.com/aviman-8536/python-deploy-new.git'
         GIT_BRANCH = 'dev'
-        GIT_CREDENTIALS = '' // Make sure this credential ID exists in Jenkins
+        GIT_CREDENTIALS = 'github_credentials' // Make sure this credential ID exists in Jenkins
     }
     stages {
         stage('Checkout') {
@@ -21,14 +21,14 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    dockerImage.run('-d --name your-container-name')
+                    dockerImage.run('-d --name aviman')
                 }
             }
         }
         stage('Show Results') {
             steps {
                 script {
-                    sh 'docker logs your-container-name'
+                    sh 'docker logs aviman'
                 }
             }
         }
@@ -36,8 +36,8 @@ pipeline {
     post {
         always {
             script {
-                sh 'docker stop your-container-name'
-                sh 'docker rm your-container-name'
+                sh 'docker stop aviman'
+                sh 'docker rm aviman'
             }
         }
     }
