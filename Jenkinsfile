@@ -21,7 +21,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    dockerImage.run('-d --name your-container-name')
+                    dockerImage.run('-d --aviman-container')
                 }
             }
         }
